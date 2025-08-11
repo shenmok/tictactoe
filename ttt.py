@@ -229,10 +229,8 @@ def check_win():
         bl.config(image=diagonal2_win_o)
         
 #draw function part
-        
-    elif button_images[0] != 'normal' and button_images[1] != 'normal' and button_images[2] != 'normal' and button_images[3] != 'normal' and button_images[4] != 'normal' and button_images[5] != 'normal' and button_images[6] != 'normal' and button_images[7] != 'normal' and button_images[8] != 'normal' and button_images[0] != 'hover' and button_images[1] != 'hover' and button_images[2] != 'hover' and button_images[3] != 'hover' and button_images[4] != 'hover' and button_images[5] != 'hover' and button_images[6] != 'hover' and button_images[7] != 'hover' and button_images[8] != 'hover' and win == False:
+    elif all(i in ('clik_x','clik_o') for i in button_images) and win==False:
         showinfo('Tic Tac Toe','DRAW' ,icon='info')
-        disable_buttons()
                                 
 # disabling buttons function
 
