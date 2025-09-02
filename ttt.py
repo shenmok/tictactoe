@@ -1,8 +1,7 @@
-# 2022
-
+# 2022, editing in 2025
 #------------------------------------------------------------------
 # Made By Akash
-# Helped by bee ( a discord username ) and Anshuman Thakur and countless( i forgot the exact number :p) examples on the internet and community
+# Helped by bee ( a discord username ), Anshuman and the internet (all hail stack overflow)
 # Thanks for reading this and using this.
 #------------------------------------------------------------------
 
@@ -15,7 +14,8 @@ import pathlib
 import time
 
 # image defining
-
+p1='X'
+p2='O'
 normal_id = pathlib.Path(__file__).parent / 'images_ttt' / 'default2.png'
 hover_id = pathlib.Path(__file__).parent / 'images_ttt' / 'blue.png'
 
@@ -59,42 +59,46 @@ diagonal2_win_o = PhotoImage(file=diagonal2_win_o_id)
 
 win = False
 player = False
-
-# button list for manually checking current image 
+player_val='X Turn'
+# button list for tracking current image 
 
 button_images = ['normal', 'normal', 'normal', 'normal', 'normal', 'normal', 'normal', 'normal', 'normal']
 
 # winner check function 
 
 def check_win():
-    global win, player
+    global win, player,loser
     
     if button_images[0] == button_images[1] == button_images[2] == 'clik_x':
         
         disable_buttons()
+        
         win=True
-        player=False
-        showinfo('Tic Tac Toe','X wins' ,icon='info')
+        player=True
+        showinfo('Tic Tac Toe',f'{p1} [x] wins' ,icon='info')
+        
         tl.config(image=horizontal_win_x)
         tc.config(image=horizontal_win_x)
         tr.config(image=horizontal_win_x)
         
     elif button_images[3] == button_images[4] == button_images[5] == 'clik_x':
-
+        
         disable_buttons()
+        
         win=True
-        player=False
-        showinfo('Tic Tac Toe','X wins' ,icon='info')
+        player=True
+        showinfo('Tic Tac Toe',f'{p1} [x] wins' ,icon='info')
         ml.config(image=horizontal_win_x)
         mc.config(image=horizontal_win_x)
         mr.config(image=horizontal_win_x)
         
     elif button_images[6] == button_images[7] == button_images[8] == 'clik_x':
-
+        
         disable_buttons()
+        
         win=True
-        player=False
-        showinfo('Tic Tac Toe','X wins' ,icon='info')
+        player=True
+        showinfo('Tic Tac Toe',f'{p1} [x] wins' ,icon='info')
         bl.config(image=horizontal_win_x)
         bc.config(image=horizontal_win_x)
         br.config(image=horizontal_win_x)
@@ -102,9 +106,10 @@ def check_win():
     elif button_images[0] == button_images[3] == button_images[6] == 'clik_x':
 
         disable_buttons()
+        
         win=True
-        player=False
-        showinfo('Tic Tac Toe','X wins' ,icon='info')
+        player=True
+        showinfo('Tic Tac Toe',f'{p1} [x] wins' ,icon='info')
         tl.config(image=vertical_win_x)
         ml.config(image=vertical_win_x)
         bl.config(image=vertical_win_x)
@@ -112,132 +117,173 @@ def check_win():
     elif button_images[1] == button_images[4] == button_images[7] == 'clik_x':
 
         disable_buttons()
+        
         win=True
-        player=False
-        showinfo('Tic Tac Toe','X wins' ,icon='info')
+        player=True
+        showinfo('Tic Tac Toe',f'{p1} [x] wins' ,icon='info')
         tc.config(image=vertical_win_x)
         mc.config(image=vertical_win_x)
         bc.config(image=vertical_win_x)
         
     elif button_images[2] == button_images[5] == button_images[8] == 'clik_x':
-
+        
         disable_buttons()
+        
         win=True
-        player=False
-        showinfo('Tic Tac Toe','X wins' ,icon='info')
+        player=True
+        showinfo('Tic Tac Toe',f'{p1} [x] wins' ,icon='info')
         tr.config(image=vertical_win_x)
         mr.config(image=vertical_win_x)
         br.config(image=vertical_win_x)
         
     elif button_images[0] == button_images[4] == button_images[8] == 'clik_x':
-
+        
         disable_buttons()
+        
         win=True
-        player=False
-        showinfo('Tic Tac Toe','X wins' ,icon='info')
+        player=True
+        showinfo('Tic Tac Toe',f'{p1} [x] wins' ,icon='info')
         tl.config(image=diagonal1_win_x)
         mc.config(image=diagonal1_win_x)
         br.config(image=diagonal1_win_x)
         
     elif button_images[2] == button_images[4] == button_images[6] == 'clik_x':
             
+        
         disable_buttons()
+        
         win=True
-        player=False
-        showinfo('Tic Tac Toe','X wins' ,icon='info')
+        player=True
+        showinfo('Tic Tac Toe',f'{p1} [x] wins' ,icon='info')
         tr.config(image=diagonal2_win_x)
         mc.config(image=diagonal2_win_x)
         bl.config(image=diagonal2_win_x)
         
     elif button_images[0] == button_images[1] == button_images[2] == 'clik_o':
         
+        
         disable_buttons()
+        
         win=True
         player=False
-        showinfo('Tic Tac Toe','O wins' ,icon='info')
+        showinfo('Tic Tac Toe',f'{p2} [o] wins' ,icon='info')
         tl.config(image=horizontal_win_o)
         tc.config(image=horizontal_win_o)
         tr.config(image=horizontal_win_o)
         
     elif button_images[3] == button_images[4] == button_images[5] == 'clik_o':
 
+        
         disable_buttons()
+        
         win=True
         player=False
-        showinfo('Tic Tac Toe','O wins' ,icon='info')
+        showinfo('Tic Tac Toe',f'{p2} [o] wins' ,icon='info')
         ml.config(image=horizontal_win_o)
         mc.config(image=horizontal_win_o)
         mr.config(image=horizontal_win_o)
         
     elif button_images[6] == button_images[7] == button_images[8] == 'clik_o':
 
+        
         disable_buttons()
+        
         win=True
         player=False
-        showinfo('Tic Tac Toe','O wins' ,icon='info')
+        showinfo('Tic Tac Toe',f'{p2} [o] wins' ,icon='info')
         bl.config(image=horizontal_win_o)
         bc.config(image=horizontal_win_o)
         br.config(image=horizontal_win_o)
         
     elif button_images[0] == button_images[3] == button_images[6] == 'clik_o':
 
+        
         disable_buttons()
+        
         win=True
         player=False
-        showinfo('Tic Tac Toe','O wins' ,icon='info')
+        showinfo('Tic Tac Toe',f'{p2} [o] wins' ,icon='info')
         tl.config(image=vertical_win_o)
         ml.config(image=vertical_win_o)
         bl.config(image=vertical_win_o)
         
     elif button_images[1] == button_images[4] == button_images[7] == 'clik_o':
 
+        
         disable_buttons()
+        
         win=True
-        showinfo('Tic Tac Toe','O wins' ,icon='info')
+        showinfo('Tic Tac Toe',f'{p2} [o] wins' ,icon='info')
         tc.config(image=vertical_win_o)
         mc.config(image=vertical_win_o)
         bc.config(image=vertical_win_o)
         
     elif button_images[2] == button_images[5] == button_images[8] == 'clik_o':
 
+        
         disable_buttons()
+        
         win=True
         player=False
-        showinfo('Tic Tac Toe','O wins' ,icon='info')
+        showinfo('Tic Tac Toe',f'{p2} [o] wins' ,icon='info')
         tr.config(image=vertical_win_o)
         mr.config(image=vertical_win_o)
         br.config(image=vertical_win_o)
         
     elif button_images[0] == button_images[4] == button_images[8] == 'clik_o':
-
+        
         disable_buttons()
+        
         win=True
         player=False
-        showinfo('Tic Tac Toe','O wins' ,icon='info')
+        showinfo('Tic Tac Toe',f'{p2} [o] wins' ,icon='info')
         tl.config(image=diagonal1_win_o)
         mc.config(image=diagonal1_win_o)
         br.config(image=diagonal1_win_o)
         
     elif button_images[2] == button_images[4] == button_images[6] == 'clik_o':
             
+        
         disable_buttons()
+       
         win=True
         player=False
-        showinfo('Tic Tac Toe','O wins' ,icon='info')
+        showinfo('Tic Tac Toe',f'{p2} [o] wins' ,icon='info')
         tr.config(image=diagonal2_win_o)
         mc.config(image=diagonal2_win_o)
         bl.config(image=diagonal2_win_o)
         
+    
 #draw function part
     elif all(i in ('clik_x','clik_o') for i in button_images) and win==False:
         showinfo('Tic Tac Toe','DRAW' ,icon='info')
-                                
+        disable_buttons()
+        win=-1
+
+    if player==False:
+        player_val='X turn'
+        if win==True:
+            print(p2,'[O] wins')
+        elif win==-1:
+            print('Draw')
+    elif player==True:
+        player_val='O turn'
+        if win==True:
+            print(p1,'[X]wins')
+        elif win==-1:
+            print('Draw')
+    chance_label.config(text=player_val)
+
+    if win==True or win==-1:
+        win=False
+        return
+
 # disabling buttons function
 
 def disable_buttons():
+    global p1,p2
     button_images[0]=button_images[1]=button_images[2]=button_images[3]=button_images[4]=button_images[5]=button_images[6]=button_images[7]=button_images[8]='disabled'
-    
-# reset function
+
 
 def reset_b():
     button_images[0]=button_images[1]=button_images[2]=button_images[3]=button_images[4]=button_images[5]=button_images[6]=button_images[7]=button_images[8]='normal'
@@ -532,8 +578,17 @@ def on_click9(e):
         
     elif result == 'no':
         return
+
+#save the names
+def saved_names():
+    global p1,p2
+    p1=p1_text.get()
+    p2=p2_text.get()
+    print('Saved Names')
+    print("X:",p1,"\nO:",p2)
+    notif.config(text='Saved player names.')
+    canva.after(2000, lambda: notif.config(text=''))
     
-         
 # the buttons themselves
         
 tl = Button(canva, image=normal, width=250, height=250)
@@ -545,9 +600,21 @@ mr = Button(canva, image=normal, width=250, height=250)
 bl = Button(canva, image=normal, width=250, height=250)
 bc = Button(canva, image=normal, width=250, height=250)
 br = Button(canva, image=normal, width=250, height=250)
-reset_btn = Button(canva, text= 'NEW GAME', width=30, height=7)
 
-# the buttons format positions for a 3x3
+frm_label=Frame(canva,background='white')
+frm_text=Frame(canva,background='white')
+p1_label=Label(frm_label,background='white', text= 'Player X name',padx=10,font=('Arial',17,'bold'))
+p2_label=Label(frm_label,background='white', text= 'Player O name',padx=10,font=('Arial',17,'bold'))
+
+p1_text=Entry(frm_text,width=15,font=('Arial',15,'italic'))
+p2_text=Entry(frm_text,width=15,font=('Arial',15,'italic'))
+
+chance_label=Label(canva,background='white',text=player_val,pady=10,padx=10,font=('Arial',17,'bold'))
+frm_save=Frame(canva,background='white')
+reset_btn = Button(canva, text= 'NEW GAME', width=10, height=1,font=('Arial',15,'bold'))
+savenames=Button(frm_save, text='Save Names',command=saved_names,width=10,height=3)
+notif=Label(frm_save,text='',fg='green',font=('Arial',12,'italic'))
+# # the buttons format positions for a 3x3
 
 tl.grid(column=0, row=0)
 tc.grid(column=1, row=0)
@@ -558,9 +625,17 @@ mr.grid(column=2, row=1)
 bl.grid(column=0, row=2)
 bc.grid(column=1, row=2)
 br.grid(column=2, row=2)
-reset_btn.grid(column=4, row=1)
-
-
+notif.pack(side='right')
+p1_label.pack(pady=10)
+p2_label.pack(pady=10)
+p1_text.pack(pady=10)
+p2_text.pack(pady=10)
+frm_label.grid(column=4,row=0)
+frm_text.grid(column=5,row=0)
+savenames.pack(side='left',padx=5)
+reset_btn.grid(column=5,row=2)
+frm_save.grid(column=6,row=0)
+chance_label.grid(column=6, row=1)
 # the events
 
 tl.bind('<Enter>', on_enter)
